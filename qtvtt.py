@@ -1525,14 +1525,14 @@ def build_index(dirpath):
                     frag = QTextDocumentFragment.fromHtml(s)
                     s = frag.toPlainText()
                     
-                    print "tokenizing", filename
+                    print(f"tokenizing {filename}")
                     for word in re.split(r"\W+", s):
                         if (word != ""):
                             word = word.lower()
                             ss = words.get(word, set())
                             ss.add(subfilepath)
                             words[word] = ss
-                    print "tokenized"
+                    print("tokenized")
         
     # XXX Also look at the index file cdrom\WEBHELP\INDEX.HHK which is XML
     # XXX Could gzip it
